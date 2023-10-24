@@ -1,0 +1,37 @@
+funcao inicio()
+{
+
+ inteiro final=1000
+
+ inteiro t10 = 34, //10 posicao da sequencia é igual a 34, contando a partir de 0 (zero)
+    t11 = 55, // 11 posicao = 55
+    t12 = 0 //desconhecido, será a soma de t10 e t11 
+
+ 
+
+ escreva(t10," -> " ,t11) // exibe na tela os valores das variaveis t10 e t11
+
+ inteiro contar = 0 // inicializo meu contador
+
+    // fará um loop para enquanto contar for menor ou igual ao valor final que é 1000
+    enquanto(contar <= final){
+
+        //o próximo termo da sequencia de Fibonacci é a soma dos 2 anteriores
+    t12 = t10 + t11
+
+    //exibe na tela o novo termo calculado
+    escreva(" -> ", t12)
+
+    //com o novo termo encontrado, os termos anteriores recebem um valor equivalente a sua nova posição na sequencia
+    // atualiza as variáveis t10 e t11 com os valores do proximo termo da sequência
+    t10 = t11
+    t11 = t12
+
+    //incrementa o contador e a operação se realiza novamente
+    //até o contador atingir o limite
+    contar = contar + 1
+
+    }
+}
+//fim do programa
+ escreva(" -> Fim")
