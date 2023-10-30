@@ -23,7 +23,7 @@ int main()
     // verifica se o numero inicial é maior que o final
     if(nInicial > nFinal){ 
         printf("O numero inicial deve ser menor que o final.");
-        return 1;
+        return 1; // 1 = programa terminou com erro
     }
 
     for(int i = nInicial; i <= nFinal; i++)
@@ -32,6 +32,7 @@ int main()
         if(VerificaImparOuPar(i) == 1) totalNumPar++; 
     }
 
+    // mostra na tela o total de numeros pares encontrados
     printf("[+] Total de numeros pares encontrados: %d", totalNumPar);
     return 0;
 }

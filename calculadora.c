@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 double RelizaOperacao(double n1,double n2, char operacao)
 {
+    // De acordo com cada operacao solicitada, realiza o calculo e retorna o valor
+    // adicionei uma validacao para caso o usuario digite uma operacao invalida
     switch (operacao)
     {
     case '+': return n1 + n2;
     case '-': return n1 - n2;
     case '*': return n1 * n2;
-    case '/': 
+        case '/':  // adicionei o retorno -1 para caso a divisao seja por 0
         if(n2 == 0){
             printf("Divisao por 0 nao eh possivel... ");
-            return 0;
+            return -1;
         } 
         return n1 / n2;
     default:
@@ -25,8 +26,9 @@ int main(){
     double num1 = 0, num2 = 0, resultado = 0;
     char op;
 
-    printf("Modo de uso da calculadora: valor operacao valor.\nEx.: 1 + 1 (digitar somente numeros (= )");
-    printf("Para sair, pressione CTRL + C");
+    // exibe o modo de uso da calculadora
+    printf("[+] Modo de uso da calculadora: [valor] [operacao] [valor]\n- Ex.: 1 + 1 (digitar somente numeros (= )\n");
+    printf("[-] Para sair, pressione CTRL + C.");
     do{
         printf("\n=> ");
         //Recebe os numeros e a operação do usário

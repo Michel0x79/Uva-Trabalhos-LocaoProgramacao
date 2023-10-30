@@ -1,37 +1,25 @@
-funcao inicio()
-{
+Algoritmo "Fibonacci"
+Var
+   final, t10, t11, t12, contar: Inteiro
 
- inteiro final=1000
+Inicio
+   final <- 1000        // define o valor final da sequência
+   t10 <- 34            // o decimo termo da sequencia tem o valor de 34
+   t11 <- 55            // o 11° termo tem o de 55
+   t12 <- 0             // t12 sera o termo seguinte
+   Escreva(t10, " -> ", t11)  // exibe os dois termos
 
- inteiro t10 = 34, //10 posicao da sequencia é igual a 34, contando a partir de 0 (zero)
-    t11 = 55, // 11 posicao = 55
-    t12 = 0 //desconhecido, será a soma de t10 e t11 
+   contar <- 0          // inicializando o contador
 
- 
+   Enquanto contar <= final Faca
+      t12 <- t10 + t11  // proximo termo é calculado somando os dois anteriores
+      Escreva(" -> ", t12)  // exibe o novo termo
 
- escreva(t10," -> " ,t11) // exibe na tela os valores das variaveis t10 e t11
+      t10 <- t11        // o primeiro termo recebe o valor do segundo
+      t11 <- t12        // o segundo recebe o do primeiro
+                        // para dar continuidade a sequencia
+      contar <- contar + 1  // incrementa contador
+   FimEnquanto
 
- inteiro contar = 0 // inicializo meu contador
-
-    // fará um loop para enquanto contar for menor ou igual ao valor final que é 1000
-    enquanto(contar <= final){
-
-        //o próximo termo da sequencia de Fibonacci é a soma dos 2 anteriores
-    t12 = t10 + t11
-
-    //exibe na tela o novo termo calculado
-    escreva(" -> ", t12)
-
-    //com o novo termo encontrado, os termos anteriores recebem um valor equivalente a sua nova posição na sequencia
-    // atualiza as variáveis t10 e t11 com os valores do proximo termo da sequência
-    t10 = t11
-    t11 = t12
-
-    //incrementa o contador e a operação se realiza novamente
-    //até o contador atingir o limite
-    contar = contar + 1
-
-    }
-}
-//fim do programa
- escreva(" -> Fim")
+   Escreva(" -> Fim")   // final do programa
+FimAlgoritmo
